@@ -1,13 +1,16 @@
-# include <stdio.h>
-# include <stdlib.h>
-# include "cdataframe.h"
-# define REALOC_SIZE 256
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "cdataframe.h"
+
+// 4.2.1 Creation du CDATAFRAME + Fonctionnalités
+// le CDataframe ne sera autre qu’un tableau de colonnes
 
 
 // 1 - Alimentation
 // Création d'un CDataFrame vide
 // On crée un pointeur car cela nous permet d'allouer un espace dynamiquement.
-
 
 CDataframe* create_CDATAFRAME(char *title) {
     CDataframe* DataFrame = (CDataframe*)malloc(sizeof(CDataframe));
