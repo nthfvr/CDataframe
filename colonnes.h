@@ -1,22 +1,24 @@
-#ifndef CDATAFRAME_COLONNES_H
-#define CDATAFRAME_COLONNES_H
+#ifndef colonne_h
+#define colonne_h
 
-// PARTIE 1
-typedef struct
-{
-    char* titre;
-    int taille_phy;
-    int taille_log;
-    int* donnees;
-} COLUMN;
+#define REALOC_SIZE 256
 
-COLUMN *create_column(char* title);
-int insert_value(COLUMN* col, int value) {
+typedef struct {
+    char titre[100];
+    int taille_physique;
+    int taille_logique;
+    int* donnees; // correspond au tableau (au differentes valeurs qui seront presentes dans la colonne)
+} COLUMN ;
+
+COLUMN *create_column( char* title);
+int insert_value(COLUMN* col, int value);
 void delete_column(COLUMN **col);
 void print_col(COLUMN* col);
-int occu_val(COLUMN *col, int x);
+
+int occurence(COLUMN *col, int x);
 int valeur_presente_x (COLUMN *col, int x);
 int valeur_superieur_x (COLUMN *col, int x);
-int valeur_inferieur_x (COLUMN *col, int x);
+int valeur_inferieur_x (COLUMN *col, int x) ;
+int valeur_egale_x (COLUMN *col, int x);
 
-#endif CDATAFRAME_COLONNES_H
+#endif /* colonne_h */
