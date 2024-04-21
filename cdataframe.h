@@ -1,3 +1,10 @@
+
+# include <stdio.h>
+# include <stdlib.h>
+
+#ifndef CDATAFRAME_H
+#define CDATAFRAME_H
+
 // Création de l'objet et des attributs d'un CDATAFRAM
 typedef struct {
     char titre[20];
@@ -33,3 +40,5 @@ void Afficher_nb_colonnes_Cdataframe (CDataframe* Dataframe);
 void valeurs_egale_x_CdataFrame (CDataframe* DataFrame, int x);
 void valeurs_sup_x_CdataFrame (CDataframe* DataFrame, int x);
 void valeurs_inf_x_CdataFrame (CDataframe* DataFrame, int x);
+
+#endif CDATAFRAME_H
