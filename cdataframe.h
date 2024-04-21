@@ -1,7 +1,3 @@
-
-# include <stdio.h>
-# include <stdlib.h>
-
 #ifndef CDATAFRAME_H
 #define CDATAFRAME_H
 
