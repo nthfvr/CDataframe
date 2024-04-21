@@ -11,15 +11,12 @@ typedef struct
 } COLUMN;
 
 COLUMN *create_column(char* title);
-int insert_value(COLUMN* col, int value);
+int insert_value(COLUMN* col, int value) {
 void delete_column(COLUMN **col);
 void print_col(COLUMN* col);
-int occu_val(COLUMN* col, int val);
-int val_at_pos(COLUMN* col,int pos);
-int nb_val_supp(COLUMN* col, int val);
-int nb_val_inf(COLUMN* col, int val);
-
-
-
+int occurence(COLUMN *col, int x);
+int valeur_presente_x (COLUMN *col, int x);
+int valeur_superieur_x (COLUMN *col, int x);
+int valeur_inferieur_x (COLUMN *col, int x);
 
 #endif CDATAFRAME_COLONNES_H
