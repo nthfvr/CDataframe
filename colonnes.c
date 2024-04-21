@@ -5,6 +5,7 @@
 #define REALOC_SIZE 256
 
 //PARTIE 1
+// On va maintenant faire une fonction qui permettra de créer une colonne vide (d'abord son prototype) (tache 4.1.1)
 COLUMN *create_column(char* title)
 {
     COLUMN* c = (COLUMN*)malloc(sizeof(COLUMN));
@@ -15,6 +16,7 @@ COLUMN *create_column(char* title)
     return c;
 }
 
+// tache 4.1.2, Inserer une valeur dans une colonne.
 int insert_value(COLUMN* col, int value)
 {
     if (col->donnees == NULL)   // si la colonne ne contient aucune valeurs
@@ -39,12 +41,14 @@ int insert_value(COLUMN* col, int value)
     }
 }
 
+// tache 4.1.3, Libérer l’espace allouée par une colonne.
 void delete_column(COLUMN **col)
 {
     free((*col)->donnees);
     free(*col);
 }
 
+// tache 4.1.4, Afficher le contenu d’une colonne
 void print_col(COLUMN* col)
 {
     int i;
@@ -54,6 +58,8 @@ void print_col(COLUMN* col)
     }
 }
 
+// tache 4.1.5, Autres fonctions
+// 1 - Retourner le nombre d'occurences d'une valeur x donnée en paramètre
 int occu_val(COLUMN* col, int val)
 {
     int i,cpt=0;
@@ -67,12 +73,14 @@ int occu_val(COLUMN* col, int val)
     return cpt;
 }
 
-int val_at_pos(COLUMN* col,int pos)
+// 2 - Retourner la valeur présente à la position x donné en paramètre
+int valeur_presente_x(COLUMN* col,int pos)
 {
     return((col->donnees)[pos]);
 }
 
-int nb_val_supp(COLUMN* col, int val)
+// 3 - Retourner le nombre de valeurs qui sont supérieures à x donné en paramètre
+int valeur_superieur_x(COLUMN* col, int val)
 {
     int i,cpt=0;
     for(i=0;i<(col->taille_log);i++)
@@ -85,7 +93,8 @@ int nb_val_supp(COLUMN* col, int val)
     return cpt;
 }
 
-int nb_val_inf(COLUMN* col, int val)
+// 4 - Retourner le nombre de valeurs qui sont inférieures à x donné en paramètre
+int valeur_inferieur_x(COLUMN* col, int val)
 {
     int i,cpt=0;
     for(i=0;i<(col->taille_log);i++)
